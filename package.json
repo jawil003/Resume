@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "build": "tsc && relaxed pages/intro.html"
+    "build": "npm run build:js && relaxed pages/intro.html --build-once",
+    "build:js": "tsc"
   },
   "dependencies": {
     "polymer": "^0.5.0",
