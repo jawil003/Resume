@@ -1,0 +1,7 @@
+#cover {
+  padding-top: 40%;
+}
+
+.chapter {
+  page-break-before: always;
+}
