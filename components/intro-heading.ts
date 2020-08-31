@@ -1,4 +1,4 @@
-class CustomH1 extends HTMLElement {
+class IntroHeading extends HTMLElement {
   constructor() {
     super();
     this.config();
@@ -10,9 +10,9 @@ class CustomH1 extends HTMLElement {
   render() {
     if (this.shadowRoot)
       this.shadowRoot.innerHTML = `
-        <h1 style="color:var(--blue)"><slot></slot><h1>
+        <h1 style="color: var(--blue); font-size: 2rem; text-decoration: underline;"><slot></slot><h1>
       `;
   }
 }
 
-customElements.define("custom-h1", CustomH1);
+customElements.define("intro-heading", IntroHeading);
