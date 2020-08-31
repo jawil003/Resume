@@ -5,6 +5,7 @@
   },
   "scripts": {
     "build": "npm run build:js && relaxed pages/intro.html --build-once",
+    "dev": "nodemon --exec npm run build",
     "build:js": "webpack --config webpack.config.js",
     "serve": "npm run build:js & serve"
   },
@@ -23,5 +24,17 @@
     "typescript": "^4.0.2",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
+  },
+  "nodemon": {
+    "ignore": [
+      "out/*",
+      "node-modules/*",
+      ".awcache/*",
+      ".gitignore"
+    ],
+    "events": {
+      "restart": "osascript -e 'display notification \"App restarted due to:\n'$FILENAME'\" with title \"nodemon\"'"
+    },
+    "exec": "npm run build"
   }
 }
