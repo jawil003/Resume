@@ -4,12 +4,13 @@
     "email": "jw19980309@gmail.com"
   },
   "scripts": {
-    "build": "npm run build:js && relaxed pages/intro.html --build-once",
+    "build": "npm run build:js && relaxed out/index.html --build-once",
     "dev": "nodemon --exec npm run build",
     "build:js": "webpack --config webpack.config.js",
     "serve": "npm run build:js & serve"
   },
   "dependencies": {
+    "ejs": "^3.1.5",
     "moment": "^2.27.0",
     "polymer": "^0.5.0",
     "relaxedjs": "^0.2.4"
@@ -18,7 +19,9 @@
     "@babel/core": "^7.11.5",
     "awesome-typescript-loader": "^5.2.1",
     "babel-core": "^6.26.3",
+    "ejs-compiled-loader": "^3.0.0",
     "hard-source-webpack-plugin": "^0.13.1",
+    "html-webpack-plugin": "^4.4.1",
     "nodemon": "^2.0.4",
     "serve": "^11.3.2",
     "typescript": "^4.0.2",

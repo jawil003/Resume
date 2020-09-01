@@ -3,7 +3,8 @@ const {
 } = require("awesome-typescript-loader");
 const path = require("path");
 const HardSourceWebpackPlugin = require("hard-source-webpack-plugin");
-
+const HTMLWebpackPlugin = require("html-webpack-plugin");
+const { ProvidePlugin } = require("webpack");
 module.exports = {
   optimization: {
     splitChunks: {
@@ -28,11 +29,28 @@ module.exports = {
       },
     },
   },
-  entry: "./components/index.ts",
-  // Currently we need to add '.ts' to the resolve.extensions array.
-  plugins: [new HardSourceWebpackPlugin()],
+  entry: ["./components/index.ts"],
+  plugins: [
+    new HTMLWebpackPlugin({
+      template: "pages/index.ejs",
+      inject: "body",
+    }),
+    new HardSourceWebpackPlugin(),
+  ],
   module: {
     rules: [
+      {
+        test: /\.ejs$/,
+        use: {
+          loader: "ejs-compiled-loader",
+          options: {
+            htmlmin: true,
+            htmlminOptions: {
+              removeComments: true,
+            },
+          },
+        },
+      },
       {
         test: /\.tsx?$/,
         loader: "awesome-typescript-loader",
@@ -47,7 +65,7 @@ module.exports = {
     extensions: [".ts", ".js"],
   },
   output: {
-    publicPath: "/out",
+    publicPath: ".",
     filename: "index.js",
     chunkFilename: "[id].js",
     path: path.resolve(__dirname, "out"),
