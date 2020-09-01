@@ -12,3 +12,5 @@ import "./page-root-first";
 import "./background-triangle";
 import "./intro-main-paragraph-signature";
 import "./intro-footer-item";
+import "./intro-main-paragraph-iconbox";
+import "./intro-main-paragraph-iconbox-icon";
