@@ -1,4 +1,4 @@
-class AddressHeader extends HTMLElement {
+class IntroMainParagraph extends HTMLElement {
   constructor() {
     super();
     this.config();
@@ -10,9 +10,7 @@ class AddressHeader extends HTMLElement {
   render() {
     if (this.shadowRoot)
       this.shadowRoot.innerHTML = `
-        <div style="position: relative; width: 100%; height: 20vh;"><slot></slot><div>
+        <p style="margin-bottom: 20px;"><slot></slot><p>
       `;
   }
 }
-
-customElements.define("address-header", AddressHeader);

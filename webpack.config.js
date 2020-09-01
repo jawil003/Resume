@@ -4,36 +4,19 @@ const {
 const path = require("path");
 const HardSourceWebpackPlugin = require("hard-source-webpack-plugin");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
-const { ProvidePlugin } = require("webpack");
+const {
+  CleanWebpackPlugin,
+} = require("clean-webpack-plugin");
 module.exports = {
   optimization: {
-    splitChunks: {
-      chunks: "async",
-      minSize: 20000,
-      maxSize: 0,
-      minChunks: 1,
-      maxAsyncRequests: 30,
-      maxInitialRequests: 30,
-      automaticNameDelimiter: "~",
-      enforceSizeThreshold: 50000,
-      cacheGroups: {
-        defaultVendors: {
-          test: /[\\/]node_modules[\\/]/,
-          priority: -10,
-        },
-        default: {
-          minChunks: 2,
-          priority: -20,
-          reuseExistingChunk: true,
-        },
-      },
-    },
+    runtimeChunk: "single",
   },
+  mode: "production",
   entry: ["./components/index.ts"],
   plugins: [
+    new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
       template: "pages/index.ejs",
-      inject: "body",
     }),
     new HardSourceWebpackPlugin(),
   ],
@@ -44,6 +27,8 @@ module.exports = {
         use: {
           loader: "ejs-compiled-loader",
           options: {
+            html5: true,
+            useShortDoctype: true,
             htmlmin: true,
             htmlminOptions: {
               removeComments: true,
@@ -56,7 +41,7 @@ module.exports = {
         loader: "awesome-typescript-loader",
         options: {
           useBabel: true,
-          useCache: true,
+          //useCache: true,
         },
       },
     ],
@@ -66,7 +51,7 @@ module.exports = {
   },
   output: {
     publicPath: ".",
-    filename: "index.js",
+    filename: "[name].[contenthash].js",
     chunkFilename: "[id].js",
     path: path.resolve(__dirname, "out"),
   },

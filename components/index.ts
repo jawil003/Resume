@@ -5,3 +5,5 @@ import "./image-cover";
 import "./intro-heading";
 import "./resumeItem";
 import "./intro-footer";
+import "./intro-main";
+import "./intro-main-paragraph";

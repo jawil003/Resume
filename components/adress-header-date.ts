@@ -1,4 +1,4 @@
-import moment from "moment";
+import dayjs from "dayjs";
 
 class AddressHeaderDate extends HTMLElement {
   constructor() {
@@ -12,7 +12,7 @@ class AddressHeaderDate extends HTMLElement {
   render() {
     if (this.shadowRoot)
       this.shadowRoot.innerHTML = `
-        <span style="position: absolute; bottom: 0px; right: 0px; font-size: 1.3rem;  padding: 20px;">${moment().format(
+        <span style="position: absolute; bottom: 0px; right: 0px; font-size: 1.3rem;  padding: 20px;">${dayjs().format(
           "DD.MM.YYYY"
         )}<span>
       `;
