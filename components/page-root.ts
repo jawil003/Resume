@@ -1,4 +1,4 @@
-class IntroMain extends HTMLElement {
+class PageRoot extends HTMLElement {
   constructor() {
     super();
     this.config();
@@ -10,9 +10,9 @@ class IntroMain extends HTMLElement {
   render() {
     if (this.shadowRoot)
       this.shadowRoot.innerHTML = `
-        <main style="font-family: Open Sans; padding: 2px; overflow: hidden;"><slot></slot><main>
+        <div style="page-break-before: always;"><slot></slot></div>
       `;
   }
 }
 
-customElements.define("intro-main", IntroMain);
+customElements.define("page-root", PageRoot);

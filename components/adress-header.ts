@@ -10,7 +10,7 @@ class AddressHeader extends HTMLElement {
   render() {
     if (this.shadowRoot)
       this.shadowRoot.innerHTML = `
-        <div style="position: relative; width: 100%; height: 20vh;"><slot></slot><div>
+        <div style="position: relative; width: 100%; height: 20vh; margin-bottom: 30px;"><slot></slot></div>
       `;
   }
 }

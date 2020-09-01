@@ -14,7 +14,7 @@ class AddressHeaderDate extends HTMLElement {
       this.shadowRoot.innerHTML = `
         <span style="position: absolute; bottom: 0px; right: 0px; font-size: 1.3rem;  padding: 20px;">${dayjs().format(
           "DD.MM.YYYY"
-        )}<span>
+        )}</span>
       `;
   }
 }

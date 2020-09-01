@@ -7,7 +7,8 @@
     "build": "npm run build:js && relaxed out/index.html --build-once",
     "dev": "nodemon --exec npm run build",
     "build:js": "webpack --config webpack.config.js",
-    "serve": "npm run build:js && serve"
+    "serve": "npm run build:js && serve",
+    "open": "open-cli out/index.pdf"
   },
   "dependencies": {
     "dayjs": "^1.8.34",
@@ -24,6 +25,7 @@
     "hard-source-webpack-plugin": "^0.13.1",
     "html-webpack-plugin": "^4.4.1",
     "nodemon": "^2.0.4",
+    "open-cli": "^6.0.1",
     "serve": "^11.3.2",
     "typescript": "^4.0.2",
     "webpack": "^4.44.1",

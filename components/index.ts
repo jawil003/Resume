@@ -7,3 +7,6 @@ import "./resumeItem";
 import "./intro-footer";
 import "./intro-main";
 import "./intro-main-paragraph";
+import "./page-root";
+import "./page-root-first";
+import "./background-triangle";

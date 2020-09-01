@@ -1,4 +1,4 @@
-class AddressHeaderItem extends HTMLElement {
+class PageRootFirst extends HTMLElement {
   constructor() {
     super();
     this.config();
@@ -10,12 +10,12 @@ class AddressHeaderItem extends HTMLElement {
   render() {
     if (this.shadowRoot)
       this.shadowRoot.innerHTML = `
-        <p style="position: absolute; top: 0px; left: 0px; font-size: 1.3rem;  padding: 20px;"><slot></slot></p>
+        <div><slot></slot></div>
       `;
   }
 }
 
 customElements.define(
-  "address-header-item",
-  AddressHeaderItem
+  "page-root-first",
+  PageRootFirst
 );

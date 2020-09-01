@@ -18,7 +18,22 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: "pages/index.ejs",
     }),
-    new HardSourceWebpackPlugin(),
+    new HardSourceWebpackPlugin({
+      cacheDirectory:
+        "node_modules/.cache/hard-source/[confighash]",
+      configHash: function (webpackConfig) {
+        // node-object-hash on npm can be used to build this.
+        return require("node-object-hash")({
+          sort: false,
+        }).hash(webpackConfig);
+      },
+      // Either false, a string, an object, or a project hashing function.
+      environmentHash: {
+        root: process.cwd(),
+        directories: [],
+        files: ["package-lock.json", "yarn.lock"],
+      },
+    }),
   ],
   module: {
     rules: [
