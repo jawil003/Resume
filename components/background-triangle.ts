@@ -10,13 +10,14 @@ class BackgroundTriangle extends HTMLElement {
   render() {
     if (this.shadowRoot)
       this.shadowRoot.innerHTML = `
-        <div style="z-index: -1; border-bottom:${this.getAttribute(
-          "width"
-        )} solid transparent; border-left:${this.getAttribute(
-        "width"
-      )} solid var(--blue); border-right: ${this.getAttribute(
-        "width"
-      )} solid transparent; width: 0px; height: 0px; position: absolute; top: 0px; left: 0px;"></div>
+        <div style="position: absolute; top: 0px; left: 0px; overflow: hidden; width: 100vw; height: 100vh">
+        <div style="position: relative; transform: rotate(60deg); border-bottom:${this.getAttribute(
+          "size"
+        )} solid transparent; border-right:${this.getAttribute(
+        "size"
+      )} solid var(--blue); border-top: ${this.getAttribute(
+        "size"
+      )} solid transparent; width: 0px; height: 0px; top: -500px; left: -110px; z-index: -1; "></div></div>
       `;
   }
 }

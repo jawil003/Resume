@@ -8,7 +8,7 @@
     "dev": "nodemon --exec npm run build",
     "build:js": "webpack --config webpack.config.js",
     "serve": "npm run build:js && serve",
-    "open": "open-cli out/index.pdf"
+    "open": "open-cli out/index.pdf -- 'google chrome'"
   },
   "dependencies": {
     "dayjs": "^1.8.34",

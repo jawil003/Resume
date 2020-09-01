@@ -10,7 +10,7 @@ class IntroHeading extends HTMLElement {
   render() {
     if (this.shadowRoot)
       this.shadowRoot.innerHTML = `
-        <h1 style="margin: 0px auto 2em auto; font-size: 1.8rem; text-decoration: underline; text-align: left;"><slot></slot></h1>
+        <h1 style="margin: 0px auto 1em auto; font-size: 1.8rem; text-decoration: underline; text-align: left;"><slot></slot></h1>
       `;
   }
 }

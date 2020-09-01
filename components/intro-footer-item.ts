@@ -10,9 +10,11 @@ class IntroFooterItem extends HTMLElement {
   render() {
     if (this.shadowRoot)
       this.shadowRoot.innerHTML = `
-        <div style="display: grid"; grid-template-rows: 30% 70%><slot><img src="${this.getAttribute(
+        <div style="color: var(--white); display: grid; column-gap: 10px; grid-template-columns: 30% 70%; justify-items: center; align-items: center;"><img width="30px" height="30px" src="${this.getAttribute(
           "src"
-        )}"/></slot></div>
+        )}"></img><a style="color: inherit;" href=${this.getAttribute(
+        "href"
+      )}><slot></slot></a></div>
       `;
   }
 }

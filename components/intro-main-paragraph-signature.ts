@@ -1,4 +1,4 @@
-class AddressHeaderItem extends HTMLElement {
+class IntroMainParagraphSignature extends HTMLElement {
   constructor() {
     super();
     this.config();
@@ -10,12 +10,12 @@ class AddressHeaderItem extends HTMLElement {
   render() {
     if (this.shadowRoot)
       this.shadowRoot.innerHTML = `
-        <p style="color: var(--white); position: absolute; top: 0px; left: 0px; font-size: 1.3rem;  padding: 20px;"><slot></slot></p>
+        <span style="margin-top: 0.8em;font-family: 'Dancing Script'; font-size: 2em;"><slot></slot></span>
       `;
   }
 }
 
 customElements.define(
-  "address-header-item",
-  AddressHeaderItem
+  "intro-main-paragraph-signature",
+  IntroMainParagraphSignature
 );
