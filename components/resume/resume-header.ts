@@ -1,4 +1,4 @@
-class PageRootFirst extends HTMLElement {
+class ResumeHeader extends HTMLElement {
   constructor() {
     super();
     this.config();
@@ -10,12 +10,9 @@ class PageRootFirst extends HTMLElement {
   render() {
     if (this.shadowRoot)
       this.shadowRoot.innerHTML = `
-        <div><slot></slot></div>
+        <header><slot></slot></header>
       `;
   }
 }
 
-customElements.define(
-  "page-root-first",
-  PageRootFirst
-);
+customElements.define("resume-header", ResumeHeader);
