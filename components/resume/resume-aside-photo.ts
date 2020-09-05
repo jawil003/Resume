@@ -10,10 +10,10 @@ class ResumeAsidePhoto extends HTMLElement {
   render() {
     if (this.shadowRoot)
       this.shadowRoot.innerHTML = `
+        
         <img src="${this.getAttribute(
           "src"
-        )}" style="width: 100%; border-radius: 50%;"></img>
-      `;
+        )}" style="width: 100%; border-radius: 50%;"></img>`;
   }
 }
 

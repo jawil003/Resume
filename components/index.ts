@@ -17,3 +17,6 @@ import "./resume/resume-header";
 import "./resume/resume-main";
 import "./resume/resume-aside-photo";
 import "./resume/resume-root";
+import "./resume/resume-main-aside-header";
+import "./resume/resume-main-aside-wrapper";
+import "./resume/resume-main-item";

@@ -11,11 +11,10 @@ class ResumeRoot extends HTMLElement {
     if (this.shadowRoot)
       this.shadowRoot.innerHTML = `
         <div style="
-      display: grid;
-      grid-template-columns: 60% 40%;
+      height: 80%; display: grid; grid-template-columns: 65% 35%;
       grid-template-rows: 100%;
-      height: 1185px;
-    "><slot></slot></div>
+    ">
+    <slot></slot></div>
       `;
   }
 }
