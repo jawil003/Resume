@@ -10,7 +10,7 @@ class IntroMainParagraphSignature extends HTMLElement {
   render() {
     if (this.shadowRoot)
       this.shadowRoot.innerHTML = `
-        <span style="margin-top: 0.8em;font-family: 'Dancing Script'; font-size: 2em;"><slot></slot></span>
+        <span style="display:block; margin-top: 0.3em; font-family: 'Dancing Script'; font-size: 2em;"><slot></slot></span>
       `;
   }
 }
