@@ -12,7 +12,7 @@ class IntroHeading extends HTMLElement {
       this.shadowRoot.innerHTML = `
         <h1 style="margin: 2em auto 0.75em auto; font-size: 1.8rem; 
         text-decoration: underline; text-align: left;
-        color: var(--blue);"><slot></slot></h1>
+        color: #000;"><slot></slot></h1>
       `;
   }
 }

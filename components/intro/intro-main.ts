@@ -10,7 +10,7 @@ class IntroMain extends HTMLElement {
   render() {
     if (this.shadowRoot)
       this.shadowRoot.innerHTML = `
-        <main style="color: var(--blue); font-family: Open Sans; 
+        <main style="color: #000; font-family: Open Sans; 
         padding: 2px; overflow: hidden;"><slot></slot><main>
       `;
   }
