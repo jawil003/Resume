@@ -1,15 +1,15 @@
 {
-  "title": "Initiativbewerbung um eine Stelle als Werksstudent Webentwicklung React",
+  "title": "Bewerbung als Studentischer Mitarbeiter (w/m/d) Software-Entwicklung",
   "address": {
-    "companyName": "Adesso SE",
-    "street": "Adessoplatz 1",
-    "city": "44269 Dortmund",
+    "companyName": "IHK mbH",
+    "street": "Hörder Hafenstrasse 5",
+    "city": "44263 Dortmund",
     "contact": {
       "name": {
-        "firstname": "Anja",
-        "lastname": "Sambeth"
+        "firstname": "Tim",
+        "lastname": "Schwarzhoff"
       },
-      "gender": "f"
+      "gender": "m"
     }
   }
 }
