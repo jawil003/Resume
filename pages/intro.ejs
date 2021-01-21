@@ -5,8 +5,9 @@
           ><%= htmlWebpackPlugin.options.options.address.companyName %><br />
           <%= htmlWebpackPlugin.options.options.address.street %> <br />
           <%= htmlWebpackPlugin.options.options.address.city %> <br />
-          Deutschland <br />
+          Deutschland <% if(htmlWebpackPlugin.options.options.address.contact) { %><br />
           <%= htmlWebpackPlugin.options.options.address.contact.name.firstname %>  <%= htmlWebpackPlugin.options.options.address.contact.name.lastname %>
+          <% } %>
         </address-header-item>
         <address-header-date />
       </address-header>
@@ -16,8 +17,8 @@
       <intro-main>
     <intro-main-paragraph>
       <intro-main-paragraph>
-        <% if (htmlWebpackPlugin.options.options.address.contact.name.lastname) { %>
-          Sehr <% if (htmlWebpackPlugin.options.options.address.contact.gender==="f") { %> geehrte Frau <% } else { %> geehrter Herr <% } %> <%= htmlWebpackPlugin.options.options.address.contact.name.lastname %>, <br/>
+        <% if (htmlWebpackPlugin.options.options.address.contact && htmlWebpackPlugin.options.options.address.contact.name.lastname) { %>
+          Sehr <% if (htmlWebpackPlugin.options.options.address.contact && htmlWebpackPlugin.options.options.address.contact.gender==="f") { %> geehrte Frau <% } else { %> geehrter Herr <% } %> <%= htmlWebpackPlugin.options.options.address.contact.name.lastname %>, <br/>
           sehr geehrte Damen und Herren,
         <% } else { %>
           Sehr geehrte Damen und Herren,
