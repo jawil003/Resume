@@ -23,13 +23,17 @@ class ResumeMainItem extends HTMLElement {
           <div style="display: grid; box-sizing: border-box; padding: 5px; border-right: 1px solid var(--blue); 
           justify-content: center; font-size: 1.25em; font-weight: 500; align-content: center;">${this.getAttribute(
             "timestamp"
-          )}</div>
+          )
+            ?.split(/\\n/)
+            .join("<br/>")}</div>
           <div style="border-left: 1px solid var(--blue); box-sizing: border-box; padding: 5px 5px 5px 20px ; display: grid;
-          justify-content: start; justify-items: start; align-items: center;  align-content: center; 
-          text-align: center; row-gap: 10px; grid-template-rows: repeat(3, auto);">
+          justify-content: start; justify-items: start; align-items: start;  align-content: start; 
+          text-align: left; row-gap: 10px; grid-template-rows: repeat(3, auto);">
             <span style="font-size: 1.15em; font-weight: 500;">${this.getAttribute(
               "job"
-            )}</span>
+            )
+              ?.split(/\\n/)
+              .join("<br/>")}</span>
             <a style="color: var(--blue); text-decoration: none;" href="${this.getAttribute(
               "href"
             )}"><span>${this.getAttribute(
@@ -37,7 +41,9 @@ class ResumeMainItem extends HTMLElement {
       )}</span></a>
             <p style="text-align: justify; font-size: 0.75em; font-weight: 300; white-space: nowrap; margin: 0px;">${this.getAttribute(
               "description"
-            )?.replace(/\\n/, "<br/>")}</p>
+            )
+              ?.split(/\\n/)
+              .join("<br/>")}</p>
           </div>
         </div>
       `;
