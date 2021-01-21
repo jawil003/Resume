@@ -26,7 +26,7 @@ class ResumeHeader extends HTMLElement {
              right: 14px; padding: 5px 10px; 
              background-color: var(--grey); 
              color: var(--white);">
-                Web Developer
+                Softwareentwickler
               </div>
            </div>
            
