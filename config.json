@@ -1,0 +1,15 @@
+{
+  "title": "Initiativbewerbung um eine Stelle als Werksstudent Webentwicklung React",
+  "address": {
+    "companyName": "Adesso SE",
+    "street": "Adessoplatz 1",
+    "city": "44269 Dortmund",
+    "contact": {
+      "name": {
+        "firstname": "Anja",
+        "lastname": "Sambeth"
+      },
+      "gender": "f"
+    }
+  }
+}

@@ -2,23 +2,26 @@
   <background-triangle size="500px"></background-triangle>
       <address-header>
         <address-header-item
-          >Adesso SE <br />
-          Adessoplatz 1 <br />
-          44269 Dortmund <br />
+          ><%= htmlWebpackPlugin.options.options.address.companyName %><br />
+          <%= htmlWebpackPlugin.options.options.address.street %> <br />
+          <%= htmlWebpackPlugin.options.options.address.city %> <br />
           Deutschland <br />
-          Anja Sambeth
+          <%= htmlWebpackPlugin.options.options.address.contact.name.firstname %>  <%= htmlWebpackPlugin.options.options.address.contact.name.lastname %>
         </address-header-item>
         <address-header-date />
       </address-header>
       <intro-heading
-        >Initiativbewerbung um eine Stelle als
-        Werksstudent Webentwicklung
-        React</intro-heading
+        ><%= htmlWebpackPlugin.options.options.title %></intro-heading
       >
       <intro-main>
     <intro-main-paragraph>
       <intro-main-paragraph>
-        Sehr geehrte Damen und Herren,
+        <% if (htmlWebpackPlugin.options.options.address.contact.name.lastname) { %>
+          Sehr <% if (htmlWebpackPlugin.options.options.address.contact.gender==="f") { %> geehrte Frau <% } else { %> geehrter Herr <% } %> <%= htmlWebpackPlugin.options.options.address.contact.name.lastname %>, <br/>
+          sehr geehrte Damen und Herren,
+        <% } else { %>
+          Sehr geehrte Damen und Herren,
+        <% } %>
     </intro-main-paragraph>
     <intro-main-paragraph>
         da sich mein Studium nun in der finalen Phase befindet und dadurch bin ich wieder 

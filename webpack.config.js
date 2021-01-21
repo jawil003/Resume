@@ -7,6 +7,7 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 const {
   CleanWebpackPlugin,
 } = require("clean-webpack-plugin");
+const config = require("./config.json");
 module.exports = {
   optimization: {
     runtimeChunk: "single",
@@ -16,6 +17,9 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
+      options: {
+        ...config,
+      },
       template: "pages/index.ejs",
     }),
     new HardSourceWebpackPlugin({
